@@ -1,0 +1,27 @@
+
+.grid{
+    border: 1px solid black;
+    
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    align-items: center;
+    
+}
+.input{
+    width: 300px;
+    display: inline;
+}
+.form{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    display: inline;
+    padding-left: 20px;
+    
+}
+.card{
+    background-color: #cbeaf7;
+}

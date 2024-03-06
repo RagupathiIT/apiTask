@@ -1,0 +1,51 @@
+<div class="whole-body">
+    <app-navbar></app-navbar>
+
+    <div class="search container">
+        <form [formGroup]="searchForm">
+
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" formControlName="searchText" (keyup)="onSearchTextChange($event)" />
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        </form>
+    </div>
+
+
+    <div class=" table-parent container-fluid">
+        <table class="table">
+            <thead class="table-primary">
+                
+                <tr>
+                    <th>Id</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>BirthDate</th>
+                    <th>User Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Company Name</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allUsers">
+                    <td>{{user.id}}</td>
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.birthDate}}</td>
+                    <td>{{user.login.username}}</td>
+                    <td>{{user.address.street}} , {{user.address.city}}, {{user.address.zipcode}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.company.name}}</td>
+                    <td><button (click)="openBootstrapModal(user)" class="btn btn-primary">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
